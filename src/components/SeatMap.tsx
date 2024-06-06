@@ -1,10 +1,6 @@
 import React from 'react';
 import Seat from './Seat';
-
-interface SeatMapProps {
-    seats: boolean[];
-    onSeatClick: (index: number) => void;
-}
+import { SeatMapProps } from '../utils';
 
 const SeatMap: React.FC<SeatMapProps> = ({ seats, onSeatClick }) => {
     return (

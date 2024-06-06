@@ -1,19 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-interface Passenger {
-    firstName: string;
-    lastName: string;
-    email: string;
-    seatNumber: number;
-    dateOfBooking: string;
-}
-
-interface PassengerCardProps {
-    passenger: Passenger;
-    reservedSeats: boolean[];
-    onEdit: (originalSeatNumber: number, newSeatNumber: number, firstName: string, lastName: string, email: string) => void;
-    onDelete: (seatNumber: number) => void;
-}
+import { PassengerCardProps } from '../utils';
 
 const PassengerCard: React.FC<PassengerCardProps> = ({ passenger, reservedSeats, onEdit, onDelete }) => {
     const [isEditing, setIsEditing] = useState(false);

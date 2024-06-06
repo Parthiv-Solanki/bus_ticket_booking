@@ -1,20 +1,6 @@
 import React from 'react';
 import PassengerCard from './PassengerCard';
-
-interface Passenger {
-    firstName: string;
-    lastName: string;
-    email: string;
-    seatNumber: number;
-    dateOfBooking: string;
-}
-
-interface PassengerListProps {
-    passengers: Passenger[];
-    reservedSeats: boolean[];
-    onEdit: (originalSeatNumber: number, newSeatNumber: number, firstName: string, lastName: string, email: string) => void;
-    onDelete: (seatNumber: number) => void;
-}
+import { PassengerListProps } from '../utils';
 
 const PassengerList: React.FC<PassengerListProps> = ({ passengers, reservedSeats, onEdit, onDelete }) => {
     return (

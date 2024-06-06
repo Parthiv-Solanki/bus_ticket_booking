@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-
-interface ReservationFormProps {
-    onSubmit: (firstName: string, lastName: string, email: string) => void;
-}
+import { ReservationFormProps } from '../utils';
 
 const ReservationForm: React.FC<ReservationFormProps> = ({ onSubmit }) => {
     const [firstName, setFirstName] = useState('');

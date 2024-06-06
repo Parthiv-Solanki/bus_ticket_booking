@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PassengerList from '../components/PassengerList';
-
-interface Passenger {
-  firstName: string;
-  lastName: string;
-  email: string;
-  seatNumber: number;
-  dateOfBooking: string;
-}
+import { Passenger } from '../utils';
 
 const Dashboard: React.FC = () => {
   const [passengers, setPassengers] = useState<Passenger[]>([]);

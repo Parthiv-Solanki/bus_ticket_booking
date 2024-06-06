@@ -1,10 +1,5 @@
 import React from 'react';
-
-interface SeatProps {
-    seatNumber: number;
-    isReserved: boolean;
-    onClick: () => void;
-}
+import { SeatProps } from '../utils';
 
 const Seat: React.FC<SeatProps> = ({ seatNumber, isReserved, onClick }) => {
     return (
