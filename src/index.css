@@ -5,3 +5,7 @@
 body {
   background: rgb(164, 164, 164);
 }
+
+.active {
+  color: orange;
+}
