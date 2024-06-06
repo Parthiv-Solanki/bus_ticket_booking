@@ -28,6 +28,22 @@ const Dashboard: React.FC = () => {
     window.dispatchEvent(new Event('storage'));
   };
 
+  const handleEdit = (originalSeatNumber: number, newSeatNumber: number, firstName: string, lastName: string, email: string) => {
+    const updatedPassengers = passengers.map((passenger) =>
+      passenger.seatNumber === originalSeatNumber
+        ? { ...passenger, seatNumber: newSeatNumber, firstName, lastName, email }
+        : passenger
+    );
+    setPassengers(updatedPassengers);
+    updateLocalStorage(updatedPassengers);
+
+    const newReservedSeats = Array(40).fill(false);
+    updatedPassengers.forEach((passenger) => {
+      newReservedSeats[passenger.seatNumber - 1] = true;
+    });
+    setReservedSeats(newReservedSeats);
+  };
+
   const handleDelete = (seatNumber: number) => {
     const updatedPassengers = passengers.filter((passenger) => passenger.seatNumber !== seatNumber);
     setPassengers(updatedPassengers);
@@ -41,8 +57,8 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="mx-auto p-4">
-      <PassengerList passengers={passengers} reservedSeats={reservedSeats} onDelete={handleDelete} />
+    <div className="container mx-auto p-4">
+      <PassengerList passengers={passengers} reservedSeats={reservedSeats} onEdit={handleEdit} onDelete={handleDelete} />
     </div>
   );
 };

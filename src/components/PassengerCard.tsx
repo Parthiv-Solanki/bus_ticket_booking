@@ -11,20 +11,67 @@ interface Passenger {
 interface PassengerCardProps {
     passenger: Passenger;
     reservedSeats: boolean[];
+    onEdit: (originalSeatNumber: number, newSeatNumber: number, firstName: string, lastName: string, email: string) => void;
     onDelete: (seatNumber: number) => void;
 }
 
-const PassengerCard: React.FC<PassengerCardProps> = ({ passenger, reservedSeats, onDelete }) => {
+const PassengerCard: React.FC<PassengerCardProps> = ({ passenger, reservedSeats, onEdit, onDelete }) => {
+    const [isEditing, setIsEditing] = useState(false);
+    const [firstName, setFirstName] = useState(passenger.firstName);
+    const [lastName, setLastName] = useState(passenger.lastName);
+    const [email, setEmail] = useState(passenger.email);
+    const [newSeatNumber, setNewSeatNumber] = useState(passenger.seatNumber);
+
+    const handleEdit = () => {
+        onEdit(passenger.seatNumber, newSeatNumber, firstName, lastName, email);
+        setIsEditing(false);
+    };
+
     return (
         <div className="border p-4 mb-2">
-            <div>{passenger.firstName} {passenger.lastName}</div>
-            <div>{passenger.email}</div>
-            <div>Seat Number: {passenger.seatNumber}</div>
-            <div>Date of Booking: {passenger.dateOfBooking}</div>
-            <div className='mt-4'>
-                <button className="bg-green-500 text-white p-2 mr-5 rounded-lg">Edit</button>
-                <button className="bg-red-500 text-white p-2 rounded-lg" onClick={() => onDelete(passenger.seatNumber)}>Delete</button>
-            </div>
+            {isEditing ? (
+                <div className='flex flex-col'>
+                    <input
+                        type="text"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        className="mb-2 p-2 border"
+                    />
+                    <input
+                        type="text"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                        className="mb-2 p-2 border"
+                    />
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="mb-2 p-2 border"
+                    />
+                    <select
+                        value={newSeatNumber}
+                        onChange={(e) => setNewSeatNumber(Number(e.target.value))}
+                        className="mb-2 p-2 border"
+                    >
+                        {[...Array(40)].map((_, index) => (
+                            <option key={index} value={index + 1}>
+                                Seat {index + 1}
+                            </option>
+                        ))}
+                    </select>
+                    <button onClick={handleEdit} className="bg-blue-500 text-white p-2">Save</button>
+                </div>
+            ) : (
+                <>
+                    <div>{passenger.firstName} {passenger.lastName}</div>
+                    <div>{passenger.email}</div>
+                    <div>Seat Number: {passenger.seatNumber}</div>
+                    <div>Date of Booking: {passenger.dateOfBooking}</div>
+                    <button onClick={() => setIsEditing(true)} className="bg-yellow-500 text-white p-2">Edit</button>
+                    <button onClick={() => onDelete(passenger.seatNumber)} className="bg-red-500 text-white p-2">Delete</button>
+                </>
+            )}
         </div>
     );
 }

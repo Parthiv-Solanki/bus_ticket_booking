@@ -12,10 +12,11 @@ interface Passenger {
 interface PassengerListProps {
     passengers: Passenger[];
     reservedSeats: boolean[];
+    onEdit: (originalSeatNumber: number, newSeatNumber: number, firstName: string, lastName: string, email: string) => void;
     onDelete: (seatNumber: number) => void;
 }
 
-const PassengerList: React.FC<PassengerListProps> = ({ passengers, reservedSeats, onDelete }) => {
+const PassengerList: React.FC<PassengerListProps> = ({ passengers, reservedSeats, onEdit, onDelete }) => {
     return (
         <div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-4'>
             {passengers.map((passenger) => (
@@ -23,6 +24,7 @@ const PassengerList: React.FC<PassengerListProps> = ({ passengers, reservedSeats
                     key={passenger.seatNumber}
                     passenger={passenger}
                     reservedSeats={reservedSeats}
+                    onEdit={onEdit}
                     onDelete={onDelete}
                 />
             ))}
