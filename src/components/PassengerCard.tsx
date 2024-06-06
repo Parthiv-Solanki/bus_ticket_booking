@@ -41,7 +41,7 @@ const PassengerCard: React.FC<PassengerCardProps> = ({ passenger, reservedSeats,
                         className="mb-2 p-2 border"
                     >
                         {[...Array(40)].map((_, index) => (
-                            <option key={index} value={index + 1}>
+                            <option key={index} value={index + 1} disabled={reservedSeats[index] && index + 1 !== passenger.seatNumber}>
                                 Seat {index + 1}
                             </option>
                         ))}
