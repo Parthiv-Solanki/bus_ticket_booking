@@ -41,7 +41,7 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ onSubmit }) => {
                 placeholder="Email"
                 className="mb-2 p-2 border"
             />
-            <button type="submit" className="bg-blue-500 text-white p-2">Reserve</button>
+            <button type="submit" className="bg-gray-800 text-white p-2">Reserve</button>
         </form>
     );
 }

@@ -6,6 +6,25 @@ const Reservation: React.FC = () => {
     const [seats, setSeats] = useState<boolean[]>(Array(40).fill(false));
     const [selectedSeat, setSelectedSeat] = useState<number | null>(null);
 
+    useEffect(() => {
+        const updateSeats = () => {
+            const passengers = JSON.parse(localStorage.getItem('passengers') || '[]');
+            const newSeats = Array(40).fill(false);
+            passengers.forEach((passenger: { seatNumber: number }) => {
+                newSeats[passenger.seatNumber - 1] = true;
+            });
+            setSeats(newSeats);
+        };
+
+        updateSeats();
+
+        window.addEventListener('storage', updateSeats);
+
+        return () => {
+            window.removeEventListener('storage', updateSeats);
+        };
+    }, []);
+
     const handleSeatClick = (index: number) => {
         setSelectedSeat(index);
     };
@@ -35,7 +54,7 @@ const Reservation: React.FC = () => {
     return (
         <div className="container mx-auto p-4">
             {selectedSeat !== null && (
-                <div className='mx-56 my-8'>
+                <div className='md:mx-56 my-8'>
                     <ReservationForm onSubmit={handleReservation} />
                 </div>
             )}
