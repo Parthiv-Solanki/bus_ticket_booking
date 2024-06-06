@@ -11,9 +11,10 @@ interface Passenger {
 interface PassengerCardProps {
     passenger: Passenger;
     reservedSeats: boolean[];
+    onDelete: (seatNumber: number) => void;
 }
 
-const PassengerCard: React.FC<PassengerCardProps> = ({ passenger, reservedSeats }) => {
+const PassengerCard: React.FC<PassengerCardProps> = ({ passenger, reservedSeats, onDelete }) => {
     return (
         <div className="border p-4 mb-2">
             <div>{passenger.firstName} {passenger.lastName}</div>
@@ -22,7 +23,7 @@ const PassengerCard: React.FC<PassengerCardProps> = ({ passenger, reservedSeats 
             <div>Date of Booking: {passenger.dateOfBooking}</div>
             <div className='mt-4'>
                 <button className="bg-green-500 text-white p-2 mr-5 rounded-lg">Edit</button>
-                <button className="bg-red-500 text-white p-2 rounded-lg">Delete</button>
+                <button className="bg-red-500 text-white p-2 rounded-lg" onClick={() => onDelete(passenger.seatNumber)}>Delete</button>
             </div>
         </div>
     );

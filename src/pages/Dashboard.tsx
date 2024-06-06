@@ -23,9 +23,26 @@ const Dashboard: React.FC = () => {
     setReservedSeats(newReservedSeats);
   }, []);
 
+  const updateLocalStorage = (updatedPassengers: Passenger[]) => {
+    localStorage.setItem('passengers', JSON.stringify(updatedPassengers));
+    window.dispatchEvent(new Event('storage'));
+  };
+
+  const handleDelete = (seatNumber: number) => {
+    const updatedPassengers = passengers.filter((passenger) => passenger.seatNumber !== seatNumber);
+    setPassengers(updatedPassengers);
+    updateLocalStorage(updatedPassengers);
+
+    const newReservedSeats = Array(40).fill(false);
+    updatedPassengers.forEach((passenger) => {
+      newReservedSeats[passenger.seatNumber - 1] = true;
+    });
+    setReservedSeats(newReservedSeats);
+  };
+
   return (
     <div className="mx-auto p-4">
-      <PassengerList passengers={passengers} reservedSeats={reservedSeats} />
+      <PassengerList passengers={passengers} reservedSeats={reservedSeats} onDelete={handleDelete} />
     </div>
   );
 };
