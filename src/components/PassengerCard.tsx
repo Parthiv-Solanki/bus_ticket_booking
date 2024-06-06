@@ -54,8 +54,10 @@ const PassengerCard: React.FC<PassengerCardProps> = ({ passenger, reservedSeats,
                     <div>{passenger.email}</div>
                     <div>Seat Number: {passenger.seatNumber}</div>
                     <div>Date of Booking: {passenger.dateOfBooking}</div>
-                    <button onClick={() => setIsEditing(true)} className="bg-yellow-500 text-white p-2">Edit</button>
-                    <button onClick={() => onDelete(passenger.seatNumber)} className="bg-red-500 text-white p-2">Delete</button>
+                    <div className='mt-2'>
+                        <button onClick={() => setIsEditing(true)} className="bg-yellow-500 text-white p-2 mr-4 rounded-lg">Edit</button>
+                        <button onClick={() => onDelete(passenger.seatNumber)} className="bg-red-500 text-white p-2 rounded-lg">Delete</button>
+                    </div>
                 </>
             )}
         </div>
