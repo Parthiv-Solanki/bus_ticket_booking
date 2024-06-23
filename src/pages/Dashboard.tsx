@@ -51,6 +51,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="container mx-auto p-4">
+      <p className='font-bold text-xl my-6'>Passengers List</p>
       <PassengerList passengers={passengers} reservedSeats={reservedSeats} onEdit={handleEdit} onDelete={handleDelete} />
     </div>
   );
