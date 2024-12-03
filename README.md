@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Project Name: [Bus Trip Planner](https://bus-trip-planner.vercel.app/reservation)
+
 ## Available Scripts
 
 In the project directory, you can run:
