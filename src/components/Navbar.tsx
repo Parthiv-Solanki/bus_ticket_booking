@@ -5,7 +5,7 @@ const Navbar: React.FC = () => {
     return (
         <nav className="bg-gray-800 p-4">
             <div className="container mx-auto flex justify-between">
-                <div className="text-white md:text-xl">Bus Ticket Booking</div>
+                <a href='/reservation' className="text-white md:text-xl">Bus Ticket Booking</a>
                 <div className="text-white">
                     <NavLink to="/reservation" className="mx-2 hover:text-[#ffa500]">Reservation</NavLink>
                     <NavLink to="/dashboard" className="mx-2 hover:text-[#ffa500]">Dashboard</NavLink>
