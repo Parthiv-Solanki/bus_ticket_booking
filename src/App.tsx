@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navigate, createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Navbar from './components/layout/Navbar';
 import Reservation from './pages/Reservation';
 import Dashboard from './pages/Dashboard';
 import RootLayout from './components/layout/RootLayout';
