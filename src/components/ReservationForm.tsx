@@ -15,8 +15,8 @@ const ReservationForm: React.FC<ReservationFormProps> = ({ onSubmit }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col border-2 border-white p-5">
-            <p className='text-lg text-center font-bold'>Book Your Seat</p>
+        <form onSubmit={handleSubmit} className="flex flex-col p-5">
+            <p className='text-lg text-center font-bold mb-4'>Book Your Seat</p>
             <input
                 type="text"
                 value={firstName}
