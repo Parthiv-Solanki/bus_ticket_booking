@@ -14,7 +14,7 @@ const PassengerCard: React.FC<PassengerCardProps> = ({ passenger, reservedSeats,
     };
 
     return (
-        <div className="border p-4 mb-2">
+        <div className="rounded-lg p-4 mb-2 bg-white shadow-xl">
             {isEditing ? (
                 <div className='flex flex-col'>
                     <input
@@ -50,13 +50,13 @@ const PassengerCard: React.FC<PassengerCardProps> = ({ passenger, reservedSeats,
                 </div>
             ) : (
                 <>
-                    <div>{passenger.firstName} {passenger.lastName}</div>
-                    <div>{passenger.email}</div>
-                    <div>Seat Number: {passenger.seatNumber}</div>
-                    <div>Date of Booking: {passenger.dateOfBooking}</div>
+                    <div><span className='font-bold'>FullName: </span> {passenger.firstName} {passenger.lastName}</div>
+                    <div><span className='font-bold'>Email: </span>{passenger.email}</div>
+                    <div><span className='font-bold'>Seat Number: </span>{passenger.seatNumber}</div>
+                    <div><span className='font-bold'>Date of Booking: </span>{passenger.dateOfBooking}</div>
                     <div className='mt-2'>
-                        <button onClick={() => setIsEditing(true)} className="bg-yellow-500 text-white p-2 mr-4 rounded-lg">Edit</button>
-                        <button onClick={() => onDelete(passenger.seatNumber)} className="bg-red-500 text-white p-2 rounded-lg">Delete</button>
+                        <button onClick={() => setIsEditing(true)} className="bg-yellow-500 text-white p-2 px-4 mr-4 rounded-lg">Edit</button>
+                        <button onClick={() => onDelete(passenger.seatNumber)} className="bg-red-500 text-white p-2 px-4 rounded-lg">Delete</button>
                     </div>
                 </>
             )}
