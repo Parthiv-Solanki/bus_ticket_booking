@@ -3,7 +3,9 @@ import PassengerCard from './PassengerCard';
 import { PassengerListProps } from '../utils';
 import { Link } from 'react-router-dom';
 
-const PassengerList: React.FC<PassengerListProps> = ({ passengers, reservedSeats, onEdit, onDelete }) => {
+const PassengerList: React.FC<PassengerListProps> = (props) => {
+    const { passengers, reservedSeats, onEdit, onDelete } = props;
+
     return (
         <div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-4'>
             {passengers && passengers.length > 0 ? passengers?.map((passenger) => (

@@ -2,7 +2,9 @@ import React from 'react';
 import Seat from './Seat';
 import { SeatMapProps } from '../utils';
 
-const SeatMap: React.FC<SeatMapProps> = ({ seats, onSeatClick }) => {
+const SeatMap: React.FC<SeatMapProps> = (props) => {
+    const { seats, onSeatClick } = props;
+
     return (
         <div className="flex flex-col">
             <div className="mx-auto">
