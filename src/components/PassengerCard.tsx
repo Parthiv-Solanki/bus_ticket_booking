@@ -21,24 +21,24 @@ const PassengerCard: React.FC<PassengerCardProps> = ({ passenger, reservedSeats,
                         type="text"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
-                        className="mb-2 p-2 border"
+                        className="mb-2 p-2 border rounded-md border-black"
                     />
                     <input
                         type="text"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
-                        className="mb-2 p-2 border"
+                        className="mb-2 p-2 border rounded-md border-black"
                     />
                     <input
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="mb-2 p-2 border"
+                        className="mb-2 p-2 border rounded-md border-black"
                     />
                     <select
                         value={newSeatNumber}
                         onChange={(e) => setNewSeatNumber(Number(e.target.value))}
-                        className="mb-2 p-2 border"
+                        className="mb-2 p-2 border rounded-md border-black"
                     >
                         {[...Array(40)].map((_, index) => (
                             <option key={index} value={index + 1} disabled={reservedSeats[index] && index + 1 !== passenger.seatNumber}>
@@ -46,7 +46,7 @@ const PassengerCard: React.FC<PassengerCardProps> = ({ passenger, reservedSeats,
                             </option>
                         ))}
                     </select>
-                    <button onClick={handleEdit} className="bg-blue-500 text-white p-2">Save</button>
+                    <button onClick={handleEdit} className="bg-yellow-500 text-[#000000] rounded-lg font-bold p-2 uppercase">Update</button>
                 </div>
             ) : (
                 <>
