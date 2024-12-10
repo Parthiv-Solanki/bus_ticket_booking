@@ -8,7 +8,7 @@ const SeatMap: React.FC<SeatMapProps> = (props) => {
     return (
         <div className="flex flex-col">
             <div className="mx-auto">
-                <div className="bg-red-500 text-center px-5">
+                <div className="bg-red-500 text-center px-5 rounded-md">
                     Click on an available seat to proceed with your transaction.
                 </div>
                 <span className='font-bold'>Lower Deck</span>
@@ -19,7 +19,7 @@ const SeatMap: React.FC<SeatMapProps> = (props) => {
                     </div>
                     <div>
                         <div className="grid grid-cols-2 md:grid-cols-7 gap-2 mt-6">
-                            {seats.slice(0, 6).map((isReserved, index) => (
+                            {seats.slice(0, 6).map((isReserved: boolean, index: number) => (
                                 <Seat
                                     key={index}
                                     seatNumber={index + 1}
@@ -29,7 +29,7 @@ const SeatMap: React.FC<SeatMapProps> = (props) => {
                             ))}
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-7 gap-2">
-                            {seats.slice(6, 12).map((isReserved, index) => (
+                            {seats.slice(6, 12).map((isReserved: boolean, index: number) => (
                                 <Seat
                                     key={index + 6}
                                     seatNumber={index + 7}
@@ -39,7 +39,7 @@ const SeatMap: React.FC<SeatMapProps> = (props) => {
                             ))}
                         </div>
                         <div className="text-end">
-                            {seats.slice(12, 13).map((isReserved, index) => (
+                            {seats.slice(12, 13).map((isReserved: boolean, index: number) => (
                                 <Seat
                                     key={index + 12}
                                     seatNumber={index + 13}
@@ -49,7 +49,7 @@ const SeatMap: React.FC<SeatMapProps> = (props) => {
                             ))}
                         </div>
                         <div className="text-end">
-                            {seats.slice(13, 14).map((isReserved, index) => (
+                            {seats.slice(13, 14).map((isReserved: boolean, index: number) => (
                                 <Seat
                                     key={index + 13}
                                     seatNumber={index + 14}
@@ -59,7 +59,7 @@ const SeatMap: React.FC<SeatMapProps> = (props) => {
                             ))}
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-7 gap-2">
-                            {seats.slice(14, 20).map((isReserved, index) => (
+                            {seats.slice(14, 20).map((isReserved: boolean, index: number) => (
                                 <Seat
                                     key={index + 14}
                                     seatNumber={index + 15}
@@ -77,7 +77,7 @@ const SeatMap: React.FC<SeatMapProps> = (props) => {
                     <hr className="h-56 m-4" />
                     <div className="md:ml-12">
                         <div className="grid grid-cols-2 md:grid-cols-7 gap-2 mt-6">
-                            {seats.slice(20, 26).map((isReserved, index) => (
+                            {seats.slice(20, 26).map((isReserved: boolean, index: number) => (
                                 <Seat
                                     key={index + 20}
                                     seatNumber={index + 21}
@@ -87,7 +87,7 @@ const SeatMap: React.FC<SeatMapProps> = (props) => {
                             ))}
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-7 gap-2">
-                            {seats.slice(26, 32).map((isReserved, index) => (
+                            {seats.slice(26, 32).map((isReserved: boolean, index: number) => (
                                 <Seat
                                     key={index + 26}
                                     seatNumber={index + 27}
@@ -97,7 +97,7 @@ const SeatMap: React.FC<SeatMapProps> = (props) => {
                             ))}
                         </div>
                         <div className="text-end">
-                            {seats.slice(32, 33).map((isReserved, index) => (
+                            {seats.slice(32, 33).map((isReserved: boolean, index: number) => (
                                 <Seat
                                     key={index + 32}
                                     seatNumber={index + 33}
@@ -107,7 +107,7 @@ const SeatMap: React.FC<SeatMapProps> = (props) => {
                             ))}
                         </div>
                         <div className="text-end">
-                            {seats.slice(33, 34).map((isReserved, index) => (
+                            {seats.slice(33, 34).map((isReserved: boolean, index: number) => (
                                 <Seat
                                     key={index + 33}
                                     seatNumber={index + 34}
@@ -117,7 +117,7 @@ const SeatMap: React.FC<SeatMapProps> = (props) => {
                             ))}
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-7 gap-2">
-                            {seats.slice(34, 40).map((isReserved, index) => (
+                            {seats.slice(34, 40).map((isReserved: boolean, index: number) => (
                                 <Seat
                                     key={index + 34}
                                     seatNumber={index + 35}
