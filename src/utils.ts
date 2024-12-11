@@ -6,17 +6,19 @@ export interface Passenger {
     dateOfBooking: string;
 }
 
+export type EditHandler = (originalSeatNumber: number, newSeatNumber: number, firstName: string, lastName: string, email: string) => void;
+
 export interface PassengerListProps {
     passengers: Passenger[];
     reservedSeats: boolean[];
-    onEdit: (originalSeatNumber: number, newSeatNumber: number, firstName: string, lastName: string, email: string) => void;
+    onEdit: EditHandler;
     onDelete: (seatNumber: number) => void;
 }
 
 export interface PassengerCardProps {
     passenger: Passenger;
     reservedSeats: boolean[];
-    onEdit: (originalSeatNumber: number, newSeatNumber: number, firstName: string, lastName: string, email: string) => void;
+    onEdit: EditHandler;
     onDelete: (seatNumber: number) => void;
 }
 
