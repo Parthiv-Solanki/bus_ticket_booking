@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ReservationFormProps } from '../utils';
 
 const ReservationForm: React.FC<ReservationFormProps> = (props) => {
     const { onSubmit } = props;

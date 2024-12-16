@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PassengerList from '../components/PassengerList';
-import { Passenger } from '../utils';
 
 const Dashboard: React.FC = () => {
   const [passengers, setPassengers] = useState<Passenger[]>([]);

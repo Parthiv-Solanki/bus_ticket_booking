@@ -1,6 +1,5 @@
 import React from 'react';
 import PassengerCard from './PassengerCard';
-import { PassengerListProps } from '../utils';
 import { Link } from 'react-router-dom';
 
 const PassengerList: React.FC<PassengerListProps> = (props) => {

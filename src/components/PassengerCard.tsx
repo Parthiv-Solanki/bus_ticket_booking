@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { PassengerCardProps } from '../utils';
 
 const PassengerCard: React.FC<PassengerCardProps> = (props) => {
     const { passenger, reservedSeats, onEdit, onDelete } = props;

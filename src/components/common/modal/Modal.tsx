@@ -1,5 +1,4 @@
 import React from 'react';
-import { ModalProps } from '../../../utils';
 
 const Modal: React.FC<ModalProps> = (props) => {
     const { isOpen = false, onClose, children } = props;

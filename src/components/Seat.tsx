@@ -1,5 +1,4 @@
 import React from 'react';
-import { SeatProps } from '../utils';
 
 const Seat: React.FC<SeatProps> = (props) => {
     const { seatNumber, isReserved = false, onClick } = props;

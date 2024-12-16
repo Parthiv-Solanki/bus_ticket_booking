@@ -1,6 +1,5 @@
 import React from 'react';
 import Seat from './Seat';
-import { SeatMapProps } from '../utils';
 
 const SeatMap: React.FC<SeatMapProps> = (props) => {
     const { seats, onSeatClick } = props;

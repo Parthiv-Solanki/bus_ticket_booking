@@ -1,4 +1,4 @@
-export interface Passenger {
+interface Passenger {
     firstName: string;
     lastName: string;
     email: string;
@@ -6,37 +6,37 @@ export interface Passenger {
     dateOfBooking: string;
 }
 
-export type EditHandler = (originalSeatNumber: number, newSeatNumber: number, firstName: string, lastName: string, email: string) => void;
+type EditHandler = (originalSeatNumber: number, newSeatNumber: number, firstName: string, lastName: string, email: string) => void;
 
-export interface PassengerListProps {
+interface PassengerListProps {
     passengers: Passenger[];
     reservedSeats: boolean[];
     onEdit: EditHandler;
     onDelete: (seatNumber: number) => void;
 }
 
-export interface PassengerCardProps {
+interface PassengerCardProps {
     passenger: Passenger;
     reservedSeats: boolean[];
     onEdit: EditHandler;
     onDelete: (seatNumber: number) => void;
 }
 
-export interface SeatMapProps {
+interface SeatMapProps {
     seats: boolean[];
     onSeatClick: (index: number) => void;
 }
 
-export interface ReservationFormProps {
+interface ReservationFormProps {
     onSubmit: (firstName: string, lastName: string, email: string) => void;
 }
-export interface SeatProps {
+interface SeatProps {
     seatNumber: number;
     isReserved: boolean;
     onClick: () => void;
 }
 
-export interface ModalProps {
+interface ModalProps {
     isOpen: boolean;
     onClose: () => void;
     children: React.ReactNode;
