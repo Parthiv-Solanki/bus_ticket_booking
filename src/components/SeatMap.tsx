@@ -5,13 +5,13 @@ const SeatMap: React.FC<SeatMapProps> = (props) => {
     const { seats, onSeatClick } = props;
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-2">
             <div className="mx-auto">
-                <div className="bg-red-500 text-center px-5 rounded-md">
+                <div className="bg-red-500 text-center text-white px-5 rounded-md mb-2">
                     Click on an available seat to proceed with your transaction.
                 </div>
                 <span className='font-bold'>Lower Deck</span>
-                <div className="flex border-l-8 border-gray-800 bg-white">
+                <div className="flex border-l-8 border-gray-800 bg-white rounded">
                     <div className="flex">
                         <span className="border-2 border-black rounded-full h-8 w-8 ml-4 mt-10"></span>
                         <hr className="border-2 h-56 border-gray-300 m-4" />
@@ -72,7 +72,7 @@ const SeatMap: React.FC<SeatMapProps> = (props) => {
             </div>
             <div className="mx-auto">
                 <span className='font-bold'>Upper Deck</span>
-                <div className="flex border-l-8 border-gray-800 bg-white">
+                <div className="flex border-l-8 border-gray-800 bg-white rounded">
                     <hr className="h-56 m-4" />
                     <div className="md:ml-12">
                         <div className="grid grid-cols-2 md:grid-cols-7 gap-2 mt-6">

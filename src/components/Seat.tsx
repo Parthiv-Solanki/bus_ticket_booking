@@ -6,7 +6,7 @@ const Seat: React.FC<SeatProps> = (props) => {
     return (
         <button
             onClick={onClick}
-            className={`text-end w-20 h-10 m-1 border-2 border-black cursor-pointer ${isReserved ? 'bg-red-300 hover:bg-red-600' : 'bg-gray-300 hover:bg-gray-500 '}`}
+            className={`text-end w-20 h-10 m-1 border-2 border-black cursor-pointer rounded ${isReserved ? 'bg-red-300 hover:bg-red-600' : 'bg-gray-300 hover:bg-gray-500 '}`}
             disabled={isReserved}
         >
             <span>{seatNumber}</span>
