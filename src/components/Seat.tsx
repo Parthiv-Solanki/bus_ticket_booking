@@ -10,7 +10,7 @@ const Seat: React.FC<SeatProps> = (props) => {
             disabled={isReserved}
         >
             <span>{seatNumber}</span>
-            <span className='h-2 w-5 border-2 border-black mx-2 px-1 group-hover:border-white'></span>
+            <span className='h-2 w-5 border-2 border-black mx-2 px-1 group-hover:border-white rounded-[2px]'></span>
         </button>
     );
 }
