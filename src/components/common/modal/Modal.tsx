@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Modal: React.FC<ModalProps> = (props) => {
     const { isOpen = false, onClose, children } = props;
@@ -7,9 +7,10 @@ const Modal: React.FC<ModalProps> = (props) => {
 
     return (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-            <div className="bg-[#f2f2f2] rounded-lg w-full max-w-md p-4 shadow-lg relative">
+            {/* DEV BRANCH MODIFICATION */}
+            <div className="bg-white dark:bg-zinc-900 rounded-xl w-full max-w-lg p-6 shadow-xl relative">
                 <button
-                    className="absolute top-2 right-3 text-gray-500 hover:text-gray-800"
+                    className="absolute top-3 right-4 text-gray-400 hover:text-gray-600"
                     onClick={onClose}
                 >
                     ✕
